@@ -19,7 +19,18 @@ namespace ModalModelessPrac
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+            MessageBox.Show("내용");
+            MessageBox.Show("내용", "제목");
+            
+            DialogResult result;
+            do
+            {
+                result = MessageBox.Show("내용", "제목", MessageBoxButtons.RetryCancel);
+            } while (result == DialogResult.Cancel);
+            if(result == DialogResult.Cancel)
+            {
+                MessageBox.Show("사용자가 취소하였습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Stop);    
+            }
         }
     }
 }
